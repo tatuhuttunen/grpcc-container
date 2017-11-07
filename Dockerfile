@@ -3,7 +3,7 @@ FROM node:wheezy
 RUN  npm install --unsafe-perm -g grpcc
 
 RUN mkdir -p /protobuf/google/protobuf && \
-        for f in any duration descriptor empty struct timestamp wrappers; do \
+        for f in any duration descriptor empty struct timestamp wrappers field_mask; do \
             curl -L -o /protobuf/google/protobuf/${f}.proto https://raw.githubusercontent.com/google/protobuf/master/src/google/protobuf/${f}.proto; \
         done && \
     mkdir -p /protobuf/google/api && \
